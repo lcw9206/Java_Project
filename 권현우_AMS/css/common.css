@@ -1,0 +1,68 @@
+@charset "EUC-KR";
+
+/**리스트 가운데 정렬*/
+.wrapper {
+	width: 100%;
+}
+
+/**해더 속성*/
+#header {
+	margin: 2% 0% 2% 0%;
+}
+
+/**해더의 타이틀 속성*/
+.wrapper #header #title {
+	display: inline;
+	margin: 2% 3% 4% 6%;
+	font-size: 50px;
+}
+
+.wrapper #header #title_logo {
+	display: inline;
+	width: 100%;
+	margin: 2% 3% 4% 6%;
+}
+
+.wrapper #header #title_logo #logo {
+	width: 7%;
+	height: 7%;
+	
+}
+
+/**해더의 버튼 리스트 속성*/
+.wrapper #header #button_list {
+	display: inline;
+	width: 100%;
+	margin: 0% 0% 5% 25%;
+}
+/**button type 의 공통 속성*/
+.button {
+	margin: 0 0.5%;
+	font-weight: bold;
+}
+/**body 속성*/
+.wrapper #body {
+	clear: both;
+	width: 60%;
+	margin: 3% 20% 3% 20%;
+	width: 60%;
+}
+/**body 안의 폼 속성*/
+.wrapper #body #regist_form {
+	/**border: 2px solid LightGray;*/
+}
+
+/**등록 리스트 항목들 사이 간격*/
+.form_list {
+	padding: 1%;
+	list-style: none;
+}
+/**label 타입 공통 속성*/
+label {
+	margin: 0px 20px 0px 0px;
+	font-weight: bold;
+}
+/*list 내부의 blank 클래스 공통속성*/
+.blank {
+	visibility: hidden;
+}

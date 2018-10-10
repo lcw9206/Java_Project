@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>계좌정보조회</title>
+<!-- 공통 css 스타일 -->
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<!--개별 css 스타일 -->
+<link rel="stylesheet" type="text/css" href="css/ams.css" />
+<!-- script -->
+<script type="text/javascript" src="js/Account.js"></script>
+<script type="text/javascript" src="js/MinusAccount.js"></script>
+<script src="js/AccountManager.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/Validator.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+var ams = {};
+	window.onload = function() {
+		init();
+		eventRegist();
+	}
+</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="header">
+			<div id="title_logo">
+				<img id="logo" src="images/KEB하나은행.png">
+			</div>
+			<div id="title">
+				<label><strong>계좌생성&조회</strong></label>
+			</div>
+			<div id="button_list">
+				<input type="submit" value="계좌등록" class="button" style="display: inline;">
+				<input type="button" value="전체조회" class="button" style="display: inline;">
+			</div>
+		</div>
+		<hr style="background-color: LightGray; height: 3px;">
+          <div class = "popUpFrame" id="popUp">
+            <label id="popUp_text"></label>
+         </div>
+    <div id="body">
+			<form id="regist_form">
+				<ul id="form_list">
+					<li class="form_list">
+					  <label>계좌종류</label>
+					  <select>
+                            <!-- <option>선택하세요. -->
+							<option>입출금
+							<option>마이너스
+					  </select>
+					</li>
+					<li class="form_list">
+						<label>계좌번호</label>
+						<span id='button_account'>
+						 <input type="button" class="form_btn" value="조회">
+						 <input type="button" class="form_btn" value="삭제">
+						 <label class=validator>공백, 특수문자(,.-) 없는 12자리 숫자,중복불가</label>
+						</span>
+						<input type="text" id="accountNum" required autocomplete="off"></li>
+					<li class="form_list">
+					  <label>예금주명</label>
+					  <span id='button_name'>
+					  <input type="button" id="search_btn" class="form_btn" value="검색">
+					  <label class=validator>공백, 특수문자(,.-) 없는 한,영자</label>
+					  </span>
+					  <input type="text" id="ownerName" required></li>
+					<li class="form_list">
+					  <span id='pass_label'>
+					    <label>비밀번호</label>
+					    <label class=validator>공백, 특수문자(,.-)없는 네자리 숫자</label>
+					  </span>
+					  <input type="password" id="passwd" required></li>
+					<li class="form_list">
+					  <span id="deposit_label">
+					    <label>예치금액</label>
+					    <label class="validator">공백, 특수문자(,.-)없는 숫자</label>  
+					  </span>
+					  <input type="text" id="depositAmount" required value='0'>
+					</li>
+					<li class="form_list">
+					  <span id="borrow_label">
+					    <label>대출금액</label>
+					    <label class="validator">공백, 특수문자(,.-)없는 숫자</label>  
+					  </span>
+					  <input type="text" id="borrwoAmount" required disabled="disabled" value='0' >
+					</li>
+				</ul>
+			</form>
+		</div>
+		<hr style="background-color: LightGray; height: 3px;">
+             <div class = "popUpFrame" id="popUpBotton">
+            <label id="popUp_text"></label>
+         </div>
+		<div id="accountlist">
+		  <div id="account-list-title">
+			<label style="font-size: 30px"><strong>등록계좌</strong></label>
+		  </div>
+		  <hr style="background-color: LightGray; height: 1px;">
+		  <div id="accountlist-header">
+			<ul id="accountlist-header-colunm">
+				<li class="accountlist-header-colunm">계좌종류</li>
+				<li class="accountlist-header-colunm">계좌번호</li>
+				<li class="accountlist-header-colunm">예금주명</li>
+				<li class="accountlist-header-colunm">현재잔액</li>
+				<li class="accountlist-header-colunm">대출금액</li>
+			</ul>
+		  </div>
+		  <hr style="background-color: LightGray; height: 1px;">
+		  <div id="accountlist-body">
+		  </div>
+		  <div id="account-footer">
+			<br>
+			<hr style="background-color: LightGray; height: 3px;">
+		  </div>
+	</div>
+		<footer></footer>
+	</div>
+</body>
+</html>
