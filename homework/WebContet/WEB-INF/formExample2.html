@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html 5 추가</title>
+</head>
+<body>
+  <form action="/servlet/receive.do" method='post' enctype="application/x-www-form-urlencoded">
+    <input type="email" name="e" placeholder="insert email" autofocus>
+    <hr>
+    
+    <label>아이디  <input type="text" name="userId"  autofocus></label>
+    <hr>
+    <label>비밀번호 <input type="text" name="userpw" ></label>
+    <hr>
+    <input type="search" name="s" >
+    <hr>
+    <input type="url" name="url">
+    <hr>
+    <input type="tel" name="tel">
+    <hr>
+    <input type="number" name="num">
+    <hr>
+    <input type="range" name="ran">
+    <hr>
+    <input type="date" name="date">
+    <hr>
+    <input type="file" name="file">
+    <hr>
+    <select name="teams">
+      <option value="lions">기아타이거스
+      <option value="lions">삼성라이온즈
+    </select>
+    <hr>
+    <input type="image" name="image-button" src="images/img_girl.jpg">
+    <hr>
+    Country code: <input type="text" name="country_code" 
+      pattern="[A-Za-z]{3}" title="Three letter country code">
+    <label>남자<input type=radio name="gender" cheked value="male"></label>
+    <label>여자<input type=radio name="gender"  value="female"></label>
+    <hr>
+    
+    <label>등산<input type="checkbox" name="hobby" value="hiking"></label>
+    <label>위킹<input type="checkbox" name="hobby" value="walking"></label>
+    <label>독서<input type="checkbox" name="hobby" value="reading"></label>
+    
+    
+    <button>버튼</button>
+  </form>
+</body>
+</html>

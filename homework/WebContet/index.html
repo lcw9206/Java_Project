@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		init();
+		registEvent();
+	}
+	
+	function init(){
+		cookie = document.cookie;
+		idCookie = getCookie("loginID")
+		console.log(idCookie);
+		if(idCookie!=''){
+			logined();
+		}
+	};
+	
+	function registEvent(){
+		 
+		var loginBtn = document.getElementById("loginBtn");
+		var looutBtn = document.getElementById("logoutBtn");
+		loginBtn.onclick = function(){
+			logined();
+		}
+		logoutBtn.onclick = function(){
+			logout();
+	 	}
+				
+	}
+	 		
+	function logined(){
+		var loginForm = document.getElementById("loginForm");
+		var logoutForm = document.getElementById("logoutForm");
+		var statusLabel = document.getElementById("statusLabel");
+		loginForm.style.display='none';
+		logoutForm.style.display='block';
+		statusLabel.innerHTML= idCookie + "님이 로그인 ";
+	}
+	
+	function logout(){
+		//setCookie("loginID","");	
+		document.cookie ="loginID=;";
+		var loginForm = document.getElementById("loginForm");
+		var logoutForm = document.getElementById("logoutForm");
+		var statusLabel = document.getElementById("statusLabel");
+		loginForm.style.display='block';
+		logoutForm.style.display='none';
+	}
+	
+	
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var decodedCookie = decodeURIComponent(document.cookie);
+	    var ca = decodedCookie.split(';');
+	    for(var i = 0; i <ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0) == ' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length, c.length);
+	        }
+	    }
+	    return "";
+	}
+	
+	function setCookie(cname, cvalue) {
+	    /* var d = new Date();
+	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    var expires = "expires="+ d.toUTCString();
+	     */
+	     console.log("done");
+	    document.cookie = cname + "=" + cvalue + ";path=/";
+	}
+		
+</script>
+<body>
+
+<div class="header">
+  <h1>My Website</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  
+  <div class="rightcolumn">
+    <div class="card">
+      <div>
+      <form action="/homework/login.do" id="loginForm">
+          <input type="text" id="userid" name="userId" placeholder="Identifier...">
+          <input type="password" id="userpw" name="userpw" placeholder="Password...">
+          <input type="submit" value="Login" id ="loginBtn">
+        </form> 
+        <form action="/homework/login.do" id="logoutForm" style="display:none">
+           <label id="statusLabel"></label>
+          <input type="submit" value="Logout"id ="logoutBtn">
+        </form> 
+      </div>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
